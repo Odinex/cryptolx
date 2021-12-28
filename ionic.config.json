@@ -1,0 +1,7 @@
+{
+  "name": "cryptolx",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
