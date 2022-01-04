@@ -7,15 +7,30 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
+  <ion-input type="text"[(ngModel)]="newTodo" placeholder="Add new Todo"></ion-input>
+  <ion-button (click)="addTodo()" expand="block">Add Todo</ion-button>
+  <ion-button (click)="printToFile()" expand="block">Print To File</ion-button>
+
+  <ion-list>
+    <ion-item *ngFor="let todo of todos">
+      {{todo}}
+
+    </ion-item>
+  </ion-list>
+
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">{{title}}</ion-title>
     </ion-toolbar>
   </ion-header>
 
+
+  <ion-button (click)="openDetailsPage()" expand="block">Show Details</ion-button>
+  <ion-button routerLink="/details" expand="block">Show Details With Router Link</ion-button>
+
+
   <div id="container">
     <strong>{{getGreeting()}}</strong>
     <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
   </div>
-  <ion-button (click)="openDetailsPage()">Show Details</ion-button>
 </ion-content>
