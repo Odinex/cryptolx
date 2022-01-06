@@ -1,12 +1,10 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+<ion-header  >
+  <ion-toolbar style="color: white; background-color: black">
+      <div >{{getGreeting()}}</div>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content >
   <ion-input type="text"[(ngModel)]="newTodo" placeholder="Add new Todo"></ion-input>
   <ion-button (click)="addTodo()" expand="block">Add Todo</ion-button>
   <ion-button (click)="printToFile()" expand="block">Print To File</ion-button>
@@ -29,8 +27,14 @@
   <ion-button routerLink="/details" expand="block">Show Details With Router Link</ion-button>
 
 
-  <div id="container">
-    <strong>{{getGreeting()}}</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <div id="container">
+      <strong>{{getGreeting()}}</strong>
+      <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    </div>
+  </ion-toolbar>
+</ion-footer>
