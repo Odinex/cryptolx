@@ -1,16 +1,21 @@
 <ion-header  >
-  <ion-toolbar style="color: white; background-color: black">
+  <ion-toolbar color = "primary">
       <div >{{getGreeting()}}</div>
   </ion-toolbar>
 </ion-header>
 
 <ion-content >
   <ion-input type="text"[(ngModel)]="newTodo" placeholder="Add new Todo"></ion-input>
-  <ion-button (click)="addTodo()" expand="block">Add Todo</ion-button>
-  <ion-button (click)="printToFile()" expand="block">Print To File</ion-button>
+  <ion-button (click)="addTodo()" expand="block">
+    <ion-icon name="logo-ionic" slot="start"></ion-icon>
+    Add Todo</ion-button>
+  <ion-button (click)="printToFile()"
+              expand="block" color = "secondary">
+    <ion-icon name="arrow-down" slot="start"></ion-icon>  Print To File</ion-button>
 
   <ion-list>
-    <ion-item *ngFor="let todo of todos">
+    <ion-item *ngFor="let todo of todos"  color = "warning">
+
       {{todo}}
 
     </ion-item>
@@ -23,8 +28,8 @@
   </ion-header>
 
 
-  <ion-button (click)="openDetailsPage()" expand="block">Show Details</ion-button>
-  <ion-button routerLink="/details" expand="block">Show Details With Router Link</ion-button>
+  <ion-button (click)="openDetailsPage()" expand="block" color = "secondary">Show Details</ion-button>
+  <ion-button routerLink="/details" expand="block" color = "secondary">Show Details With Router Link</ion-button>
 
 
 
